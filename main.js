@@ -1,3 +1,5 @@
+import key from "./apikey.js";
+
 let cityInput = document.querySelector("#searchBar");
 let form = document.querySelector("#queryForm");
 
@@ -12,7 +14,7 @@ let windSpeedPara = document.querySelector("#windSpeed");
 
 form.addEventListener("submit", async () => {
   let city = cityInput.value;
-  let responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=050883137b3d17b2c751ca0d86a096a2&units=metric`);
+  let responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`);
   let json = await responce.json();
 
   cityPara.innerHTML = json.name;
