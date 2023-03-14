@@ -12,8 +12,7 @@ let pressurePara = document.querySelector("#weatherPressure");
 let humidityPara = document.querySelector("#weatherHumidity");
 let windSpeedPara = document.querySelector("#windSpeed");
 
-form.addEventListener("submit", async () => {
-  let city = cityInput.value;
+async function queryOpenWeather(city) {
   let responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key.API_KEY}&units=metric`);
   let json = await responce.json();
 
@@ -24,4 +23,8 @@ form.addEventListener("submit", async () => {
   pressurePara.innerHTML = `${json.main.pressure} hPa`;
   humidityPara.innerHTML = `${json.main.humidity}%`;
   windSpeedPara.innerHTML = `${json.wind.speed} m/s`;
-});
+}
+
+queryOpenWeather("London");
+
+form.addEventListener("submit", () => { queryOpenWeather(cityInput.value) });
