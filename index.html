@@ -5,10 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <script src="./main.js"></script>
+  <script src="./main.js" defer></script>
   <title>Weather App</title>
 </head>
 <body>
-  
+  <nav class="nav">
+    <div class="search">
+      <form id="queryForm" action="#">
+        <input type="text" id="searchBar" class="search-bar">
+        <button id="searchBtn" class="search-btn"></button>
+      </form>
+    </div>
+  </nav>
+  <main class="main">
+    <p id="weatherCity"></p>
+    <img src="" alt="weather icon" id="weatherIcon">
+    <p id="weatherDegrees"></p>
+    <p id="weatherFeelsLike"></p>
+    <p id="weatherDescription"></p>
+    <p id="weatherPressure"></p>
+    <p id="weatherHumidity"></p>
+    <p id="windSpeed"></p>
+  </main>
 </body>
 </html>
